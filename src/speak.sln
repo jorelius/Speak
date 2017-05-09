@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "speak.console", "speak.console\speak.console.csproj", "{D2A81B6A-8EA9-4D10-9DDA-ADFD74A672F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "speak.core", "speak.engine\speak.core.csproj", "{D8F844B1-950C-433D-B626-E57540E607CF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D2A81B6A-8EA9-4D10-9DDA-ADFD74A672F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2A81B6A-8EA9-4D10-9DDA-ADFD74A672F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2A81B6A-8EA9-4D10-9DDA-ADFD74A672F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2A81B6A-8EA9-4D10-9DDA-ADFD74A672F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8F844B1-950C-433D-B626-E57540E607CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8F844B1-950C-433D-B626-E57540E607CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8F844B1-950C-433D-B626-E57540E607CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8F844B1-950C-433D-B626-E57540E607CF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
