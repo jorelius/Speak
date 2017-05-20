@@ -11,11 +11,17 @@ namespace speak.core
     {
         public SpeechSynthesizer Speaker = new SpeechSynthesizer();
 
-
+        /// <summary>
+        /// Current speaking progress 
+        /// 0.0 to 1.0
+        /// </summary>
         public double Progress { get; set; }
 
         public string Text { get; set; }
 
+        /// <summary>
+        /// Speaking voice
+        /// </summary>
         public string Voice
         {
             get
@@ -28,6 +34,9 @@ namespace speak.core
             }
         }
 
+        /// <summary>
+        /// Rate at which speaker reads
+        /// </summary>
         public int Rate
         {
             get
@@ -50,8 +59,7 @@ namespace speak.core
                 }
             }
         }
-
-
+        
         #region Events
 
         public event EventHandler<SpeakStartedEventArgs> SpeakStarted;
@@ -59,12 +67,31 @@ namespace speak.core
         public event EventHandler<SpeakProgressEventArgs> SpeakProgress;
 
         public event EventHandler<SpeakCompletedEventArgs> SpeakCompleted;
-        
+
+        void synth_SpeakStarted(object sender, SpeakStartedEventArgs e)
+        {
+            Progress = 0;
+            SpeakStarted?.Invoke(this, e);
+        }
+
+        void synth_SpeakProgress(object sender, SpeakProgressEventArgs e)
+        {
+            Progress = (double)e.CharacterPosition / (double)Text.Length;
+            SpeakProgress?.Invoke(this, e);
+        }
+
+        void synth_SpeakCompleted(object sender, SpeakCompletedEventArgs e)
+        {
+            Progress = 1;
+            SpeakCompleted?.Invoke(this, e);
+        }
+
         #endregion Events
 
         public Engine()
         {
-            // Add a handler for the SpeakProgress and SpeakCompleted events.
+            // Add a handler for the SpeakStarted, SpeakProgress, and SpeakCompleted events.
+            // This supports progress calculation. 
             Speaker.SpeakStarted +=
               new EventHandler<SpeakStartedEventArgs>(synth_SpeakStarted);
 
@@ -96,27 +123,13 @@ namespace speak.core
             synth_SpeakCompleted(this, null); 
         }
 
-        void synth_SpeakStarted(object sender, SpeakStartedEventArgs e)
-        {
-            Progress = 0;
-            SpeakStarted?.Invoke(this, e);
-        }
-
-        void synth_SpeakProgress(object sender, SpeakProgressEventArgs e)
-        {
-            Progress = (double)e.CharacterPosition / (double)Text.Length;
-            SpeakProgress?.Invoke(this, e);
-        }
-
-        void synth_SpeakCompleted(object sender, SpeakCompletedEventArgs e)
-        {
-            Progress = 1;
-            SpeakCompleted?.Invoke(this, e);
-        }
-
+        /// <summary>
+        /// Voices available on machine
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<VoiceInfo> InstalledVoices()
         {
-            return Speaker.GetInstalledVoices().Select(v => v.VoiceInfo);            
+            return Speaker.GetInstalledVoices().Select(v => v.VoiceInfo);
         }
     }
 }

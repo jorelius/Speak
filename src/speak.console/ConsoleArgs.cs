@@ -13,7 +13,7 @@ namespace speak
     [ArgExceptionBehavior(ArgExceptionPolicy.StandardExceptionHandling)]
     public class ConsoleArgs
     {
-        static speak.core.Engine Engine = new speak.core.Engine();
+        static core.Engine Engine = new core.Engine();
         static CliProgressBar bar = new CliProgressBar("{%}")
         { BorderPen = new ConsoleCharacter(' ', ConsoleColor.Green, ConsoleColor.Black) };
 
