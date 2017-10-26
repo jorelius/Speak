@@ -247,6 +247,9 @@ paket-files/
 # FAKE - F# Make
 .fake/
 
+# CAKE - C# Make
+.cake/
+
 # JetBrains Rider
 .idea/
 *.sln.iml

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>speak.console</id>
+    <version>$version</version>
+    <title>Speak Console</title>
+    <authors>Jorel Fermin</authors>
+    <owners>Jorel Fermin</owners>
+    <licenseUrl>https://github.com/jorelius/Speak/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/jorelius/Speak</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Speak is a command line utility for reading text aloud or writting the audio data to file.</description>
+    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>tts, console</tags>
+  </metadata>
+</package>
