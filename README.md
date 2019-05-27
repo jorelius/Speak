@@ -4,7 +4,7 @@
 
 ## Overview
 
-Speak is a command line utility for reading text aloud or writting the audio data to file. 
+Speak is a command line utility for reading text aloud or writing the audio data to file. 
 
 ## Usage
 
